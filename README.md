@@ -30,7 +30,7 @@ An embedded systems project demonstrating robotics, Bluetooth control, and auton
 - Check out the demonstration video: https://youtube.com/shorts/MYuRv3px1k4?feature=share
 ---
 
-## 🌱 Project 2: Greenhouse_Atmega328p_code – IoT Greenhouse Monitoring Hub  
+## Project 2: Greenhouse_Atmega328p_code – IoT Greenhouse Monitoring Hub  
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/3c330ea2-2400-46ad-9113-1efabf20078a" />
 
 ### 🔧 Overview  
