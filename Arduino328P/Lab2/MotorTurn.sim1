@@ -1,0 +1,117 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="mega328-2" mainComp="false" Show_id="true" Show_Val="false" Pos="-1208,-188" rotation="0" hflip="1" vflip="1" label="mega328-2" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="MotorBJT.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" MainMcu="false" SerialMon="-1" />
+
+<item itemtype="DcMotor" CircId="DcMotor-3" mainComp="false" Show_id="true" Show_Val="false" Pos="-1068,-40" rotation="90" hflip="1" vflip="1" label="DcMotor-3" idLabPos="-22,-48" labelrot="0" valLabPos="-14,36" valLabRot="0" RPM_Nominal="60 _RPM" Volt_Nominal="5 V" Resistance="100 Ω" />
+
+<item itemtype="Ground" CircId="Ground-4" mainComp="false" Show_id="false" Show_Val="false" Pos="-1068,60" rotation="0" hflip="1" vflip="1" label="Ground-4" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-5" mainComp="false" Show_id="false" Show_Val="false" Pos="-1068,-172" rotation="-270" hflip="1" vflip="1" label="Fixed Voltage-5" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Probe" CircId="Probe-6" mainComp="false" Show_id="false" Show_Val="true" Pos="-1096,-124" rotation="-45" hflip="1" vflip="1" label="Probe-6" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
+
+<item itemtype="BJT" CircId="BJT-7" mainComp="false" Show_id="false" Show_Val="false" Pos="-1076,-108" rotation="-360" hflip="1" vflip="1" label="BJT-7" idLabPos="18,0" labelrot="0" valLabPos="-16,20" valLabRot="0" PNP="false" Gain="100" Vcrit="0.670736 V" />
+
+<item itemtype="Resistor" CircId="Resistor-8" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-1140,-108" rotation="0" hflip="1" vflip="1" label="Resistor-8" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="220 Ω" />
+
+<item itemtype="Subcircuit" CircId="L293-12" mainComp="false" Show_id="true" Show_Val="false" Pos="-200,-132" rotation="0" hflip="1" vflip="1" label="L293-12" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1e+09 Ω" Out_High_V="5 V" Out_Low_V="0 V" Out_Imped="40 Ω" Tpd_ps="10 ns" Tr_ps="3 ns" Tf_ps="4 ns" Logic_Symbol="true" />
+
+<item itemtype="MCU" CircId="mega328-13" mainComp="false" Show_id="true" Show_Val="false" Pos="-280,-152" rotation="0" hflip="1" vflip="1" label="mega328-13" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="MotorTurn.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" MainMcu="false" SerialMon="-1" />
+
+<item itemtype="DcMotor" CircId="DcMotor-14" mainComp="false" Show_id="true" Show_Val="false" Pos="-264,-212" rotation="0" hflip="1" vflip="1" label="Motor1" idLabPos="-22,-48" labelrot="0" valLabPos="-14,36" valLabRot="0" RPM_Nominal="60 _RPM" Volt_Nominal="5 V" Resistance="100 Ω" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-17" mainComp="false" Show_id="false" Show_Val="false" Pos="-184,-44" rotation="-450" hflip="1" vflip="1" label="Fixed Voltage-17" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="DcMotor" CircId="DcMotor-19" mainComp="false" Show_id="true" Show_Val="false" Pos="-264,24" rotation="0" hflip="1" vflip="1" label="Motor2" idLabPos="-22,-48" labelrot="0" valLabPos="-14,36" valLabRot="0" RPM_Nominal="60 _RPM" Volt_Nominal="5 V" Resistance="100 Ω" />
+
+<item itemtype="TextComponent" CircId="TextComponent-20" mainComp="false" Show_id="false" Show_Val="false" Pos="-396,-112" rotation="0" hflip="1" vflip="1" label="TextComponent-20" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Margin="5 _px" Border="1 _px" Color="#1dffff" Opacity="1" Font="Helvetica [Cronyx]" Font_Color="#000080" Font_Size="10 _px" Fixed_Width="true" Text="&#x3C--Forward" />
+
+<item itemtype="TextComponent" CircId="TextComponent-21" mainComp="false" Show_id="false" Show_Val="false" Pos="-136,-116" rotation="0" hflip="1" vflip="1" label="TextComponent-21" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Margin="5 _px" Border="1 _px" Color="#ff0000" Opacity="1" Font="Helvetica [Cronyx]" Font_Color="#000080" Font_Size="10 _px" Fixed_Width="false" Text="Reverse --&#x3E" />
+
+<item itemtype="TextComponent" CircId="TextComponent-22" mainComp="false" Show_id="false" Show_Val="false" Pos="-316,64" rotation="0" hflip="1" vflip="1" label="TextComponent-22" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Margin="5 _px" Border="1 _px" Color="#000000" Opacity="1" Font="Helvetica [Cronyx]" Font_Color="#ffffff" Font_Size="10 _px" Fixed_Width="false" Text="Left:&#xa;Motor1 &#x3C-- Forward&#xa;Motor2 --&#x3E Reverse" />
+
+<item itemtype="TextComponent" CircId="TextComponent-23" mainComp="false" Show_id="false" Show_Val="false" Pos="-324,-316" rotation="0" hflip="1" vflip="1" label="TextComponent-23" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Margin="5 _px" Border="1 _px" Color="#ffffff" Opacity="1" Font="Helvetica [Cronyx]" Font_Color="#000000" Font_Size="10 _px" Fixed_Width="true" Text="Right: &#xa;Motor1 --&#x3E Reverse&#xa;Motor2 &#x3C-- Forward" />
+
+<item itemtype="Probe" CircId="Probe-27" mainComp="false" Show_id="false" Show_Val="true" Pos="-144,-228" rotation="-45" hflip="1" vflip="1" label="Probe-27" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
+
+<item itemtype="Probe" CircId="Probe-28" mainComp="false" Show_id="false" Show_Val="true" Pos="-144,8" rotation="-45" hflip="1" vflip="1" label="Probe-28" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
+
+<item itemtype="MCU" CircId="mega328-50" mainComp="false" Show_id="true" Show_Val="false" Pos="-792,-160" rotation="0" hflip="1" vflip="1" label="mega328-50" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="MotorTankTurn.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" MainMcu="true" SerialMon="-1" />
+
+<item itemtype="Subcircuit" CircId="L293-51" mainComp="false" Show_id="true" Show_Val="false" Pos="-720,-136" rotation="0" hflip="1" vflip="1" label="L293-51" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1e+09 Ω" Out_High_V="5 V" Out_Low_V="0 V" Out_Imped="40 Ω" Tpd_ps="10 ns" Tr_ps="3 ns" Tf_ps="4 ns" Logic_Symbol="true" />
+
+<item itemtype="Probe" CircId="Probe-53" mainComp="false" Show_id="false" Show_Val="true" Pos="-544,-188" rotation="-45" hflip="1" vflip="1" label="Probe-53" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
+
+<item itemtype="DcMotor" CircId="DcMotor-54" mainComp="false" Show_id="true" Show_Val="false" Pos="-600,-120" rotation="0" hflip="1" vflip="1" label="DcMotor-54" idLabPos="-22,-48" labelrot="0" valLabPos="-14,36" valLabRot="0" RPM_Nominal="60 _RPM" Volt_Nominal="5 V" Resistance="100 Ω" />
+
+<item itemtype="Probe" CircId="Probe-56" mainComp="false" Show_id="false" Show_Val="true" Pos="-540,-112" rotation="-45" hflip="1" vflip="1" label="Probe-56" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-57" mainComp="false" Show_id="false" Show_Val="false" Pos="-704,-40" rotation="-450" hflip="1" vflip="1" label="Fixed Voltage-57" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="DcMotor" CircId="DcMotor-58" mainComp="false" Show_id="true" Show_Val="false" Pos="-596,-36" rotation="0" hflip="1" vflip="1" label="DcMotor-58" idLabPos="-22,-48" labelrot="0" valLabPos="-14,36" valLabRot="0" RPM_Nominal="60 _RPM" Volt_Nominal="5 V" Resistance="100 Ω" />
+
+<item itemtype="TextComponent" CircId="TextComponent-70" mainComp="false" Show_id="false" Show_Val="false" Pos="-712,188" rotation="0" hflip="1" vflip="1" label="TextComponent-70" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Margin="5 _px" Border="1 _px" Color="#ffffdc" Opacity="1" Font="Helvetica [Cronyx]" Font_Color="#000080" Font_Size="10 _px" Fixed_Width="false" Text="MotorTankTurn" />
+
+<item itemtype="TextComponent" CircId="TextComponent-71" mainComp="false" Show_id="false" Show_Val="false" Pos="-1144,188" rotation="0" hflip="1" vflip="1" label="TextComponent-71" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Margin="5 _px" Border="1 _px" Color="#ffffdc" Opacity="1" Font="Helvetica [Cronyx]" Font_Color="#000080" Font_Size="10 _px" Fixed_Width="true" Text="MotorBJT" />
+
+<item itemtype="TextComponent" CircId="TextComponent-72" mainComp="false" Show_id="false" Show_Val="false" Pos="-272,188" rotation="0" hflip="1" vflip="1" label="TextComponent-72" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Margin="5 _px" Border="1 _px" Color="#ffffdc" Opacity="1" Font="Helvetica [Cronyx]" Font_Color="#000080" Font_Size="10 _px" Fixed_Width="true" Text="MotorTurn" />
+
+<item itemtype="Node" CircId="Node-68" mainComp="false" Pos="-704,-68" />
+
+<item itemtype="Node" CircId="Node-69" mainComp="false" Pos="-184,-64" />
+
+<item itemtype="Connector" uid="Connector-7" startpinid="Ground-4-Gnd" endpinid="DcMotor-3-rPin" pointList="-1068,44,-1068,0" />
+
+<item itemtype="Connector" uid="Connector-19" startpinid="mega328-2-PORTB5" endpinid="Resistor-8-lPin" pointList="-1168,-108,-1156,-108" />
+
+<item itemtype="Connector" uid="Connector-8" startpinid="BJT-7-emiter" endpinid="DcMotor-3-lPin" pointList="-1068,-92,-1068,-80" />
+
+<item itemtype="Connector" uid="Connector-18" startpinid="Resistor-8-rPin" endpinid="BJT-7-base" pointList="-1124,-108,-1092,-108" />
+
+<item itemtype="Connector" uid="Connector-17" startpinid="Fixed Voltage-5-outnod" endpinid="BJT-7-collector" pointList="-1068,-156,-1068,-124" />
+
+<item itemtype="Connector" uid="Connector-121" startpinid="L293-51-2Y" endpinid="DcMotor-54-lPin" pointList="-680,-120,-640,-120" />
+
+<item itemtype="Connector" uid="Connector-138" startpinid="mega328-50-PORTC3" endpinid="L293-51-1A" pointList="-752,-136,-728,-136,-728,-128" />
+
+<item itemtype="Connector" uid="Connector-139" startpinid="mega328-50-PORTC2" endpinid="L293-51-2A" pointList="-752,-128,-736,-128,-736,-120,-728,-120" />
+
+<item itemtype="Connector" uid="Connector-140" startpinid="mega328-50-PORTC1" endpinid="L293-51-3A" pointList="-752,-120,-740,-120,-740,-104,-728,-104,-728,-96" />
+
+<item itemtype="Connector" uid="Connector-142" startpinid="mega328-50-PORTC0" endpinid="L293-51-4A" pointList="-752,-112,-744,-112,-744,-96,-732,-96,-732,-88,-728,-88" />
+
+<item itemtype="Connector" uid="Connector-151" startpinid="L293-51-4Y" endpinid="DcMotor-58-lPin" pointList="-680,-88,-680,-36,-636,-36" />
+
+<item itemtype="Connector" uid="Connector-152" startpinid="L293-51-3Y" endpinid="DcMotor-58-rPin" pointList="-680,-96,-556,-96,-556,-36" />
+
+<item itemtype="Connector" uid="Connector-153" startpinid="L293-51-1Y" endpinid="DcMotor-54-rPin" pointList="-680,-128,-680,-172,-560,-172,-560,-120" />
+
+<item itemtype="Connector" uid="Connector-155" startpinid="Node-68-1" endpinid="L293-51-12EN" pointList="-704,-68,-704,-112,-728,-112" />
+
+<item itemtype="Connector" uid="Connector-156" startpinid="Fixed Voltage-57-outnod" endpinid="Node-68-0" pointList="-704,-56,-704,-68" />
+
+<item itemtype="Connector" uid="Connector-157" startpinid="Node-68-2" endpinid="L293-51-34EN" pointList="-704,-68,-728,-68,-728,-80" />
+
+<item itemtype="Connector" uid="Connector-159" startpinid="DcMotor-14-rPin" endpinid="L293-12-1Y" pointList="-224,-212,-160,-212,-160,-124" />
+
+<item itemtype="Connector" uid="Connector-160" startpinid="DcMotor-14-lPin" endpinid="L293-12-2Y" pointList="-304,-212,-304,-240,-148,-240,-148,-116,-160,-116" />
+
+<item itemtype="Connector" uid="Connector-161" startpinid="DcMotor-19-rPin" endpinid="L293-12-3Y" pointList="-224,24,-148,24,-148,-92,-160,-92" />
+
+<item itemtype="Connector" uid="Connector-162" startpinid="DcMotor-19-lPin" endpinid="L293-12-4Y" pointList="-304,24,-304,-4,-160,-4,-160,-84" />
+
+<item itemtype="Connector" uid="Connector-164" startpinid="Node-69-1" endpinid="L293-12-12EN" pointList="-184,-64,-184,-108,-208,-108" />
+
+<item itemtype="Connector" uid="Connector-165" startpinid="Fixed Voltage-17-outnod" endpinid="Node-69-0" pointList="-184,-60,-184,-64" />
+
+<item itemtype="Connector" uid="Connector-166" startpinid="Node-69-2" endpinid="L293-12-34EN" pointList="-184,-64,-208,-64,-208,-76" />
+
+<item itemtype="Connector" uid="Connector-167" startpinid="mega328-13-PORTC3" endpinid="L293-12-1A" pointList="-240,-128,-208,-128,-208,-124" />
+
+<item itemtype="Connector" uid="Connector-168" startpinid="mega328-13-PORTC2" endpinid="L293-12-2A" pointList="-240,-120,-208,-120,-208,-116" />
+
+<item itemtype="Connector" uid="Connector-169" startpinid="mega328-13-PORTC1" endpinid="L293-12-3A" pointList="-240,-112,-212,-112,-212,-92,-208,-92" />
+
+<item itemtype="Connector" uid="Connector-170" startpinid="mega328-13-PORTC0" endpinid="L293-12-4A" pointList="-240,-104,-220,-104,-220,-84,-208,-84" />
+
+</circuit>
