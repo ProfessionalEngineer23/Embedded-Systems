@@ -5,37 +5,70 @@ A collection of university projects involving **Arduino**, **ATmega328P**, **ESP
 ---
 
 ## 📂 Repository Structure  
-- **Arduino328P**  
-  Smart autonomous microbot written in Embedded C.  
-  - Implements obstacle avoidance and motor control.  
-  - Main codebase located in `CA5`.  
-
-- **Greenhouse_Atmega328p_code**  
-  Arduino C++ code for a greenhouse environmental monitoring system.  
-  - Features:  
-    - Temperature, humidity, and light monitoring  
-    - Fan and buzzer control with LCD feedback  
-    - Wi-Fi connectivity (ESP8266)  
-    - Data logging to ThingSpeak + AI-based predictions  
-  - 🌐 Dashboard + AI predictions: [greenhouse-dashboard](https://github.com/ProfessionalEngineer23/greenhouse-dashboard)  
+- **Arduino328P** → Smart Autonomous Microbot  
+- **Greenhouse_Atmega328p_code** → IoT Greenhouse Monitoring Hub  
 
 ---
 
-## 🚀 Features  
-- ✅ Real-time sensor monitoring (Temp, Humidity, Light, Soil Temp)  
-- ✅ Wi-Fi enabled data logging  
-- ✅ Custom LCD animations & system alerts  
-- ✅ Modular project structure (secrets managed via `arduino_secrets.h`)  
-- ✅ Integration with ThingSpeak + AI prediction pipeline  
+## 🤖 Project 1: Arduino328P – Smart Autonomous Microbot  
+
+### 🔧 Overview  
+An embedded systems project demonstrating robotics, Bluetooth control, and autonomous navigation. The microbot integrates sensors, actuators, and indicators for interactive functionality.  
+
+### ⚙️ Features  
+- 🚗 **Remote Control Mode** via Bluetooth (UART communication)  
+- 🔄 **Autonomous Mode** using **HC-SR04 Ultrasonic Sensor** for obstacle detection & avoidance  
+- 🔊 **Buzzer alerts** when reversing or triggered from mobile app  
+- 💡 **Lighting System**  
+  - Front headlights  
+  - Rear lights  
+  - Left/Right indicator LEDs  
+- 🌡️ **LM35 Temperature Sensor** for live data monitoring  
+- 📡 **Bidirectional communication** (sending & receiving data via UART)  
+- 🎶 **Dance Function** for demonstration & fun interaction  
 
 ---
 
-## 🛠️ Getting Started  
+## 🌱 Project 2: Greenhouse_Atmega328p_code – IoT Greenhouse Monitoring Hub  
 
-### Prerequisites for Greenhouse hub code 
+### 🔧 Overview  
+An IoT project built with **ATmega328P**, **ESP8266 Wi-Fi**, and multiple sensors. It provides real-time environmental monitoring, cloud connectivity, and AI-powered predictions for smart greenhouse management.  
+
+### ⚙️ Features  
+- 🌡️ **Sensors**  
+  - **DHT20** → Air Temperature & Humidity  
+  - **DS18B20** → Soil Temperature  
+  - **LDR** → Light Intensity  
+- 💨 **Relay-controlled Fan** → Automatically turns on/off based on set temperature threshold  
+- 🔊 **Passive Buzzer** → Plays startup melodies and alerts when fan state changes  
+- 🖥️ **LCD Display** → Shows real-time sensor values and fan state locally  
+- 🌐 **Cloud Integration**  
+  - **ESP8266 Wi-Fi** uploads sensor data to ThingSpeak  
+  - **Dashboard** hosted on Render for visualization, code can be viewed here: https://github.com/ProfessionalEngineer23/greenhouse-dashboard
+- 🤖 **AI Predictions**  
+  - Implemented using Python + XGBoost on Google Colab  
+  - Predicts future greenhouse sensor values (temperature, humidity, soil temp, light)
+   <img width="1076" height="632" alt="image" src="https://github.com/user-attachments/assets/eac9c367-9580-43f1-9b43-a904b2b918b3" />
+   <img width="1063" height="631" alt="image" src="https://github.com/user-attachments/assets/7cdf633d-e083-4a95-b674-317e6a89b85d" />
+   <img width="1074" height="632" alt="image" src="https://github.com/user-attachments/assets/b4445bcc-7ed1-47d7-9764-f9642d7ba40d" />
+   <img width="1067" height="635" alt="image" src="https://github.com/user-attachments/assets/6e81284a-2f32-4a46-9eea-322c75c1d332" />
+
+
+
+
+
+---
+
+## 🚀 Getting Started  
+
+### Prerequisites  
 - Arduino IDE or PlatformIO  
-- Required libraries:  
-  - `OneWire`, `DallasTemperature`, `LiquidCrystal`, `rgb_lcd`, `Arduino_SensorKit`  
+- Libraries:  
+  - `OneWire`  
+  - `DallasTemperature`  
+  - `LiquidCrystal`  
+  - `rgb_lcd`  
+  - `Arduino_SensorKit`  
 
 ### Setup  
 1. Clone the repository  
