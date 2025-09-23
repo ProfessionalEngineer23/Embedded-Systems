@@ -13,7 +13,7 @@ A collection of university projects involving **Arduino**, **ATmega328P**, **ESP
 ## 🤖 Project 1: Arduino328P – Smart Autonomous Microbot  
 
 ### 🔧 Overview  
-An embedded systems project demonstrating robotics, Bluetooth control, and autonomous navigation. The microbot integrates sensors, actuators, and indicators for interactive functionality.  
+An embedded systems project demonstrating robotics, Bluetooth control, and autonomous navigation. The microbot integrates sensors, led indicators for interactive functionality implemented through raw embedded c programming and hardware setup.  
 
 ### ⚙️ Features  
 - 🚗 **Remote Control Mode** via Bluetooth (UART communication)  
