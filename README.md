@@ -27,6 +27,7 @@ An embedded systems project demonstrating robotics, Bluetooth control, and auton
 - 📡 **Bidirectional communication** (sending & receiving data via UART)  
 - 🎶 **Dance Function** for demonstration & fun interaction  
 
+Check out the demonstration video: https://youtube.com/shorts/MYuRv3px1k4?feature=share
 ---
 
 ## 🌱 Project 2: Greenhouse_Atmega328p_code – IoT Greenhouse Monitoring Hub  
@@ -45,6 +46,9 @@ An IoT project built with **ATmega328P**, **ESP8266 Wi-Fi**, and multiple sensor
 - 🌐 **Cloud Integration**  
   - **ESP8266 Wi-Fi** uploads sensor data to ThingSpeak  
   - **Dashboard** hosted on Render for visualization, code can be viewed here: https://github.com/ProfessionalEngineer23/greenhouse-dashboard
+ Demonstration video: https://youtube.com/shorts/Hdc7Yb3v1_c?feature=share
+ Development vlog: https://www.youtube.com/playlist?list=PLw1CliiFCSWNNFSFAg9YIj1HqUXdAepGj
+
 - 🤖 **AI Predictions**  
   - Implemented using Python + XGBoost on Google Colab  
   - Predicts future greenhouse sensor values (temperature, humidity, soil temp, light)
