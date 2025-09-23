@@ -11,7 +11,7 @@ A collection of university projects involving **Arduino**, **ATmega328P**, **ESP
 ---
 
 ## 🤖 Project 1: Arduino328P – Smart Autonomous Microbot  
-
+<img width="558" height="751" alt="image" src="https://github.com/user-attachments/assets/40c4d715-1625-486f-947e-1f9595b5f16e" />
 ### 🔧 Overview  
 An embedded systems project demonstrating robotics, Bluetooth control, and autonomous navigation. The microbot integrates sensors, led indicators for interactive functionality implemented through raw embedded c programming and hardware setup.  
 
@@ -30,7 +30,7 @@ An embedded systems project demonstrating robotics, Bluetooth control, and auton
 ---
 
 ## 🌱 Project 2: Greenhouse_Atmega328p_code – IoT Greenhouse Monitoring Hub  
-
+<img width="1155" height="866" alt="image" src="https://github.com/user-attachments/assets/3c330ea2-2400-46ad-9113-1efabf20078a" />
 ### 🔧 Overview  
 An IoT project built with **ATmega328P**, **ESP8266 Wi-Fi**, and multiple sensors. It provides real-time environmental monitoring, cloud connectivity, and AI-powered predictions for smart greenhouse management.  
 
@@ -62,9 +62,7 @@ An IoT project built with **ATmega328P**, **ESP8266 Wi-Fi**, and multiple sensor
 
 ---
 
-## 🚀 Getting Started  
-
-### Prerequisites  
+### Prerequisites for Greenhouse.ino code 
 - Arduino IDE or PlatformIO  
 - Libraries:  
   - `OneWire`  
@@ -73,7 +71,3 @@ An IoT project built with **ATmega328P**, **ESP8266 Wi-Fi**, and multiple sensor
   - `rgb_lcd`  
   - `Arduino_SensorKit`  
 
-### Setup  
-1. Clone the repository  
-   ```bash
-   git clone https://github.com/ProfessionalEngineer23/Embedded-Systems-.git
