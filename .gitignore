@@ -1,0 +1,22 @@
+# IDE / editor
+.vscode/
+# Build / bins
+**/build/
+**/Debug/
+**/Release/
+*.o
+*.obj
+*.bin
+*.hex
+*.elf
+*.map
+# Simulations & large artifacts
+*.sim1
+*.zip
+*.7z
+*.mp4
+*.wav
+*.exe
+*.dll
+# PlatformIO/Arduino (if used)
+.pio/
