@@ -10,6 +10,8 @@
 *.hex
 *.elf
 *.map
+# Ignore secret credentials
+secrets.h
 # Simulations & large artifacts
 *.sim1
 *.zip

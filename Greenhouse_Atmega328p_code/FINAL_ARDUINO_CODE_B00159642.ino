@@ -1,4 +1,6 @@
-#include <OneWire.h> 
+// Rev1.1
+
+#include <OneWire.h>
 #include <DallasTemperature.h>
 #include <LiquidCrystal.h>
 #include "rgb_lcd.h"
@@ -7,7 +9,10 @@
 #include <Arduino_SensorKit.h>
 #include <avr/wdt.h>
 
-// Hardware Configuration
+#include "arduino_secrets.h"
+// Must have secrets.h in current directory or use env or hardcode.
+
+// ---------------- Hardware Configuration ----------------
 #define ONE_WIRE_BUS        7
 #define FAN_PIN             8
 #define TEMP_THRESHOLD_PIN  A0
@@ -16,22 +21,20 @@
 #define ESP_TX              11
 #define BUZZER_PIN          5
 
-// ThingSpeak Settings
-const String API_KEY = "R1ZTW11SA2559MEB";
-const String HOST = "api.thingspeak.com";
-const String PORT = "80";
+// ---------------- Secrets (from arduino_secrets.h) ----------------
+constexpr const char* ssid   = SECRET_SSID;
+constexpr const char* pass   = SECRET_PASS;
+constexpr const char* apiKey = SECRET_APIKEY;
+constexpr const char* host   = SECRET_HOST;
+constexpr uint16_t    port   = SECRET_PORT;
 
-// WiFi Credentials
-const String WIFI_SSID = "yep";
-const String WIFI_PASSWORD = "12345678";
-
-// Global Objects
+// ---------------- Global Objects ----------------
 rgb_lcd lcd;
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
-SoftwareSerial esp8266(ESP_RX, ESP_TX);
+SoftwareSerial esp8266(ESP_RX, ESP_TX);  // TIP: SoftwareSerial is more reliable <= 9600 baud
 
-// Custom LCD Characters
+// ---------------- Custom LCD Characters ----------------
 byte DegreesC[] = {
   B11000, B11011, B00100, B00100, B00100, B00100, B00011, B00000
 };
@@ -55,18 +58,18 @@ int fanFrame = 0;
 unsigned long lastFanFrameTime = 0;
 const unsigned long fanAnimInterval = 150;
 
-// State Variables
+// ---------------- State Variables ----------------
 float SoilTemp = 0;
-bool FanState = false;
-float previousPotValue = -1;
+bool  FanState = false;
+int   previousPotValue = -1;
 unsigned long lastPotChangeTime = 0;
-bool showingThreshold = false;
+bool  showingThreshold = false;
 
-// ===== Function Declarations =====
+// ---------------- Declarations ----------------
 void initializeSensors();
 void initializeWiFi();
 bool checkFanState(float airTemp, float threshold);
-void sendCommand(String command, int maxTime, char readReply[]);
+void sendCommand(String command, int maxTime, const char readReply[]);
 void sendToThingSpeak(float soilTemp, float airTemp, float humidity, float lux, bool fanStatus);
 float calculateLux();
 void updateLCD(float soilTemp, float airTemp, float humidity, float lux, bool fan);
@@ -91,7 +94,6 @@ void setup() {
   playStartupMelody();
   displaySystemReady();
 }
-
 
 void loop() {
   sensors.requestTemperatures();
@@ -144,13 +146,13 @@ void loop() {
   }
 
   static unsigned long lastUpdate = 0;
-  if (millis() - lastUpdate > 60000) {
+  if (millis() - lastUpdate > 60000UL) { // every 60s
     sendToThingSpeak(SoilTemp, airTemp, humidity, lux, FanState);
     lastUpdate = millis();
   }
 
   static unsigned long lastBlink = 0;
-  if (millis() - lastBlink > 500) {
+  if (millis() - lastBlink > 500UL) {
     digitalWrite(13, !digitalRead(13));
     lastBlink = millis();
   }
@@ -171,7 +173,6 @@ void loop() {
   wdt_reset();
 }
 
-
 void initializeSensors() {
   Wire.begin();
   Environment_I2C.begin();
@@ -183,6 +184,8 @@ void initializeSensors() {
   pinMode(BUZZER_PIN, OUTPUT);
 
   Serial.begin(115200);
+  // If your ESP8266 default baud is 115200 and SoftwareSerial is unstable,
+  // set ESP once via AT: AT+UART_DEF=9600,8,1,0,0 and change the next line to 9600.
   esp8266.begin(115200);
 
   float bootTemp = Environment_I2C.readTemperature();
@@ -192,11 +195,12 @@ void initializeSensors() {
 void initializeWiFi() {
   sendCommand("AT", 5, "OK");
   sendCommand("AT+CWMODE=1", 5, "OK");
-  sendCommand("AT+CWJAP=\"" + WIFI_SSID + "\",\"" + WIFI_PASSWORD + "\"", 20, "OK");
+  sendCommand(String("AT+CWJAP=\"") + ssid + "\",\"" + pass + "\"", 20, "OK");
 }
 
 bool checkFanState(float airTemp, float threshold) {
   bool shouldBeOn = (airTemp > threshold);
+  // 1°C hysteresis to avoid rapid toggling
   if (FanState && !shouldBeOn && airTemp > (threshold - 1.0)) {
     shouldBeOn = true;
   }
@@ -216,10 +220,10 @@ void setLCDColor(float airTemp) {
 
 float calculateLux() {
   int ldrValue = analogRead(LDR_PIN);
-  float voltage = ldrValue * (5.03 / 1023.0);
-  if (voltage < 0.01) return 0;
-  float resistance = (5.03 - voltage) / voltage * 10160.0;
-  return 2355175.0 * pow(resistance, -1.2109);
+  float voltage = ldrValue * (5.03f / 1023.0f);
+  if (voltage < 0.01f) return 0.0f;
+  float resistance = (5.03f - voltage) / voltage * 10160.0f;
+  return 2355175.0f * pow(resistance, -1.2109f);
 }
 
 void updateLCD(float soilTemp, float airTemp, float humidity, float lux, bool fan) {
@@ -236,7 +240,7 @@ void updateLCD(float soilTemp, float airTemp, float humidity, float lux, bool fa
   lcd.print(humidity, 1);
   lcd.print("% L:");
 
-  char luxFanBuffer[7];
+  char luxFanBuffer[8]; // enough for 4 digits + 2 icons + NUL
   int luxInt = (int)lux;
 
   if (fan) {
@@ -248,35 +252,36 @@ void updateLCD(float soilTemp, float airTemp, float humidity, float lux, bool fa
   lcd.print(luxFanBuffer);
 }
 
-void sendCommand(String command, int maxTime, char readReply[]) {
-  Serial.print("[ESP] Sending: ");
+void sendCommand(String command, int maxTime, const char readReply[]) {
+  Serial.print(F("[ESP] Sending: "));
   Serial.println(command);
+
   bool found = false;
   int countTimeCommand = 0;
 
   while (countTimeCommand < maxTime) {
     esp8266.println(command);
-    if (esp8266.find(readReply)) {
+    if (esp8266.find(readReply)) { // waits for reply substring
       found = true;
       break;
     }
     countTimeCommand++;
     delay(1000);
   }
-  Serial.println(found ? "Success" : "Failed");
+  Serial.println(found ? F("Success") : F("Failed"));
 }
 
 void sendToThingSpeak(float soilTemp, float airTemp, float humidity, float lux, bool fanStatus) {
-  String data = "GET /update?api_key=" + API_KEY +
+  String data = "GET /update?api_key=" + String(apiKey) +
                 "&field1=" + String(soilTemp) +
                 "&field2=" + String(airTemp) +
                 "&field3=" + String(humidity) +
                 "&field4=" + String(lux) +
-                "&field5=" + String(fanStatus ? 1 : 0) + 
+                "&field5=" + (fanStatus ? String("1") : String("0")) +
                 "\r\n\r\n";
 
   sendCommand("AT+CIPMUX=1", 5, "OK");
-  sendCommand("AT+CIPSTART=0,\"TCP\",\"" + HOST + "\"," + PORT, 15, "OK");
+  sendCommand(String("AT+CIPSTART=0,\"TCP\",\"") + host + "\"," + String(port), 15, "OK");
   sendCommand("AT+CIPSEND=0," + String(data.length()), 4, ">");
   esp8266.print(data);
   delay(1000);
