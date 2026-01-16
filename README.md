@@ -50,6 +50,14 @@ An IoT project built with **ATmega328P**, **ESP8266 Wi-Fi**, and multiple sensor
   - Demonstration video: https://youtube.com/shorts/Hdc7Yb3v1_c?feature=share
   - Development vlog: https://www.youtube.com/playlist?list=PLw1CliiFCSWNNFSFAg9YIj1HqUXdAepGj
 
+ ### PCB Implementation:
+ -Schematic:
+ <img width="2109" height="1175" alt="image" src="https://github.com/user-attachments/assets/3f869d72-1765-4932-9de5-ee6d7f409a8a" />
+
+ -Pcb:
+ <img width="2116" height="1175" alt="image" src="https://github.com/user-attachments/assets/02d9b2a3-aa85-4d2b-9945-2d51186803e7" />
+
+
 - **AI/ Algorithm Predictions**  
   - Implemented using Python + XGBoost on Google Colab
   - Predicts future greenhouse sensor values and exports them as graph images and .csv files. (temperature, humidity, soil temp, light)
